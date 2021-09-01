@@ -2,7 +2,7 @@
     <string name="app_name">Sem Result Calculator</string>
     <string name="enter_subject_name_and_marks">Enter subject name and marks</string>
     <string name="enter_subject_name">Enter subject name</string>
-    <string name="enter_external_main_marks">Enter External/Main Marks</string>
+    <string name="enter_external_main_marks">Enter External Marks</string>
     <string name="total_marks">Total Marks</string>
     <string name="subject1">Subject 1</string>
     <string name="subject2">Subject 2</string>

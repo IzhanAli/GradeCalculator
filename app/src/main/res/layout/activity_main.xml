@@ -3,436 +3,682 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity">
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:padding="8dp"
-    android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="@string/enter_subject_name_and_marks" />
+        android:padding="8dp">
 
-     <EditText
-        android:importantForAutofill="no"
-        android:id="@+id/subject1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="12dp"
-        android:ems="10"
-        android:hint="@string/enter_subject_name"
-        android:inputType="textPersonName"
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/enter_subject_name_and_marks" />
 
-        android:minHeight="48dp"
-        android:text="@string/subject1"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/subject1lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:hint="@string/enter_subject_name">
 
-    <EditText
-        android:id="@+id/sub1ext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/subject1"
-        android:layout_marginTop="6dp"
-        android:hint="@string/enter_external_main_marks"
-        android:importantForAutofill="no"
-        android:inputType="number"
-        android:minHeight="48dp"
-        tools:ignore="DuplicateSpeakableTextCheck" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/subject1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="15"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:text="@string/subject1" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/sub1exttotal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/subject1"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="6dp"
-        android:hint="@string/total_marks"
-        android:importantForAutofill="no"
-        android:inputType="number"
-        android:minHeight="48dp"
-        tools:ignore="DuplicateSpeakableTextCheck" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sub1extlay"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subject1lay"
+            android:layout_marginTop="6dp"
+            android:hint="@string/enter_external_main_marks"
 
-    <EditText
-        android:id="@+id/sub1int"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/sub1ext"
-        android:layout_marginTop="6dp"
-        android:hint="@string/enter_internal_marks"
-        android:importantForAutofill="no"
-        android:inputType="number"
-        android:minHeight="48dp"
-        tools:ignore="DuplicateSpeakableTextCheck" />
+            >
 
-     <EditText
-        android:importantForAutofill="no"
-        android:id="@+id/sub1inttotal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/sub1exttotal"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="6dp"
-        android:hint="@string/total_marks"
-        android:inputType="number"
-        android:minHeight="48dp" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sub1ext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sub1exttotallay"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subject1lay"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="6dp"
+            android:hint="@string/total_marks"
 
-     <EditText
-        android:importantForAutofill="no"
-        android:id="@+id/subject2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/sub1inttotal"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="@string/enter_subject_name"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:text="@string/subject2" />
+            >
 
-     <EditText
-        android:importantForAutofill="no"
-        android:id="@+id/sub2ext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/subject2"
-        android:layout_marginTop="6dp"
-        android:hint="@string/enter_external_main_marks"
-        android:inputType="number"
-        android:minHeight="48dp" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sub1exttotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
-     <EditText
-        android:importantForAutofill="no"
-        android:id="@+id/sub2exttotal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/subject2"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="6dp"
-        android:hint="@string/total_marks"
-        android:inputType="number"
-        android:minHeight="48dp" />
+                android:importantForAutofill="no"
+                android:inputType="number"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-     <EditText
-        android:importantForAutofill="no"
-        android:id="@+id/sub2int"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/sub2ext"
-        android:layout_marginTop="6dp"
-        android:hint="@string/enter_internal_marks"
-        android:inputType="number"
-        android:minHeight="48dp" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sub1intlay"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sub1extlay"
+            android:layout_marginTop="6dp"
+            android:hint="@string/enter_internal_marks"
 
-     <EditText
-        android:importantForAutofill="no"
-        android:id="@+id/sub2inttotal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/sub2exttotal"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="6dp"
-        android:hint="@string/total_marks"
-        android:inputType="number"
-        android:minHeight="48dp" />
+            >
 
-     <EditText
-        android:importantForAutofill="no"
-        android:id="@+id/subject3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/sub2inttotal"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="@string/enter_subject_name"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:text="@string/subject3" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sub1int"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
-     <EditText
-        android:importantForAutofill="no"
-        android:id="@+id/sub3ext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/subject3"
-        android:layout_marginTop="6dp"
-        android:hint="@string/enter_external_main_marks"
-        android:inputType="number"
-        android:minHeight="48dp" />
+                android:importantForAutofill="no"
+                android:inputType="number"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-     <EditText
-        android:importantForAutofill="no"
-        android:id="@+id/sub3exttotal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/subject3"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="6dp"
-        android:hint="@string/total_marks"
-        android:inputType="number"
-        android:minHeight="48dp" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sub1inttotallay"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sub1exttotallay"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="6dp"
+            android:hint="@string/total_marks"
 
-     <EditText
-        android:importantForAutofill="no"
-        android:id="@+id/sub3int"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/sub3ext"
-        android:layout_marginTop="6dp"
-        android:hint="@string/enter_internal_marks"
-        android:inputType="number"
-        android:minHeight="48dp" />
+            >
 
-     <EditText
-        android:importantForAutofill="no"
-        android:id="@+id/sub3inttotal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/sub3exttotal"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="6dp"
-        android:hint="@string/total_marks"
-        android:inputType="number"
-        android:minHeight="48dp" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sub1inttotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="6dp"
+                android:importantForAutofill="no"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-     <EditText
-        android:importantForAutofill="no"
-        android:id="@+id/subject4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/sub3inttotal"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="@string/enter_subject_name"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:text="@string/subject4" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/subject2lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sub1inttotallay"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:hint="@string/enter_subject_name">
 
-     <EditText
-        android:importantForAutofill="no"
-        android:id="@+id/sub4ext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/subject4"
-        android:layout_marginTop="6dp"
-        android:hint="@string/enter_external_main_marks"
-        android:inputType="number"
-        android:minHeight="48dp" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/subject2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/enter_subject_name"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
 
-     <EditText
-        android:importantForAutofill="no"
-        android:id="@+id/sub4exttotal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/subject4"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="6dp"
-        android:hint="@string/total_marks"
-        android:inputType="number"
-        android:minHeight="48dp" />
-
-     <EditText
-        android:importantForAutofill="no"
-        android:id="@+id/sub4int"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/sub4ext"
-        android:layout_marginTop="6dp"
-        android:hint="@string/enter_internal_marks"
-        android:inputType="number"
-        android:minHeight="48dp" />
-
-     <EditText
-        android:importantForAutofill="no"
-        android:id="@+id/sub4inttotal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/sub4exttotal"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="6dp"
-        android:hint="@string/total_marks"
-        android:inputType="number"
-        android:minHeight="48dp" />
-
-     <EditText
-        android:importantForAutofill="no"
-        android:id="@+id/subject5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/sub4inttotal"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="@string/enter_subject_name"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:text="@string/subject5" />
-
-     <EditText
-        android:importantForAutofill="no"
-        android:id="@+id/sub5ext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/subject5"
-        android:layout_marginTop="6dp"
-        android:hint="@string/enter_external_main_marks"
-        android:inputType="number"
-        android:minHeight="48dp" />
-
-     <EditText
-        android:importantForAutofill="no"
-        android:id="@+id/sub5exttotal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/subject5"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="6dp"
-        android:hint="@string/total_marks"
-        android:inputType="number"
-        android:minHeight="48dp" />
-
-     <EditText
-        android:importantForAutofill="no"
-        android:id="@+id/sub5int"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/sub5ext"
-        android:layout_marginTop="6dp"
-        android:hint="@string/enter_internal_marks"
-        android:inputType="number" />
-
-     <EditText
-        android:importantForAutofill="no"
-        android:id="@+id/sub5inttotal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/sub5exttotal"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="6dp"
-        android:hint="@string/total_marks"
-        android:inputType="number" />
-
-    <com.google.android.material.button.MaterialButton
-
-        android:layout_margin="16dp"
-        android:layout_below="@id/sub5int"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/calculate" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/button"
-        android:layout_marginTop="8dp"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
-        android:layout_centerHorizontal="true"
-        android:text="@string/result"
-        android:id="@+id/resultheader"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/resultheader"
-        android:layout_marginTop="12dp"
-        android:layout_marginStart="36dp"
-        android:id="@+id/gradeheader"
-        android:text="@string/grade"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"/>
-
-    <TextView
-        android:id="@+id/grade"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/gradeheader"
-        android:layout_marginBottom="24dp"
-        android:layout_marginStart="36dp"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-        tools:text="A+" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/resultheader"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="36dp"
-        android:id="@+id/gpaheader"
-        android:layout_alignParentEnd="true"
-        android:text="@string/gpa"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="7.6"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="24dp"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@id/gpaheader"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-        android:id="@+id/gpa"/>
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/grade"
-        android:layout_margin="16dp"
-        android:text="@string/marks_secured"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
-
-    <TextView
-        android:id="@+id/marks"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/textView2"
-        android:layout_toEndOf="@id/textView2"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-        tools:text="480" />
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_below="@id/grade"
-        android:layout_margin="16dp"
-        android:layout_toEndOf="@id/marks"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/out_of" />
-
-    <TextView
-        android:id="@+id/total"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/textView3"
-        android:layout_toEndOf="@id/textView3"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-        tools:text="500" />
+                android:text="@string/subject2" />
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-    <TextView
-        android:id="@+id/tvheading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView3"
-        android:layout_margin="16dp"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sub2extlay"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subject2lay"
+            android:layout_marginTop="6dp"
+            android:hint="@string/enter_external_main_marks"
 
-        android:text="@string/top_scoring_subject"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/topsub"
-        android:textAllCaps="true"
-        android:layout_toEndOf="@id/tvheading"
-        android:layout_alignBottom="@id/tvheading"
-        tools:text="Subject Name"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"/>
-</RelativeLayout>
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sub2ext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:importantForAutofill="no"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sub2exttotallay"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subject2lay"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="6dp"
+            android:hint="@string/total_marks"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sub2exttotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/subject2lay"
+                android:importantForAutofill="no"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sub2intlay"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sub2extlay"
+            android:layout_marginTop="6dp"
+            android:hint="@string/enter_internal_marks"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sub2int"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:importantForAutofill="no"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sub2inttotallay"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sub2exttotallay"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="6dp"
+            android:hint="@string/total_marks"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sub2inttotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sub2exttotallay"
+                android:importantForAutofill="no"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/subject3lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sub2inttotallay"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:hint="@string/enter_subject_name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/subject3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/enter_subject_name"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+
+                android:text="@string/subject3" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sub3extlay"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subject3lay"
+            android:layout_marginTop="6dp"
+            android:hint="@string/enter_external_main_marks"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sub3ext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:importantForAutofill="no"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sub3exttotallay"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subject3lay"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="6dp"
+            android:hint="@string/total_marks"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sub3exttotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/subject3lay"
+                android:importantForAutofill="no"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sub3intlay"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sub3extlay"
+            android:layout_marginTop="6dp"
+            android:hint="@string/enter_internal_marks"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sub3int"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:importantForAutofill="no"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sub3inttotallay"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sub3exttotallay"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="6dp"
+            android:hint="@string/total_marks"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sub3inttotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sub3exttotallay"
+                android:importantForAutofill="no"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/subject4lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sub3inttotallay"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:hint="@string/enter_subject_name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/subject4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/enter_subject_name"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+
+                android:text="@string/subject4" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sub4extlay"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subject4lay"
+            android:layout_marginTop="6dp"
+            android:hint="@string/enter_external_main_marks"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sub4ext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:importantForAutofill="no"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sub4exttotallay"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subject4lay"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="6dp"
+            android:hint="@string/total_marks"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sub4exttotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/subject4lay"
+                android:importantForAutofill="no"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sub4intlay"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sub4extlay"
+            android:layout_marginTop="6dp"
+            android:hint="@string/enter_internal_marks"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sub4int"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:importantForAutofill="no"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sub4inttotallay"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sub4exttotallay"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="6dp"
+            android:hint="@string/total_marks"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sub4inttotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sub3exttotallay"
+                android:importantForAutofill="no"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/subject5lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sub4inttotallay"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:hint="@string/enter_subject_name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/subject5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/enter_subject_name"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+
+                android:text="@string/subject5" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sub5extlay"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subject5lay"
+            android:layout_marginTop="6dp"
+            android:hint="@string/enter_external_main_marks"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sub5ext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:importantForAutofill="no"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sub5exttotallay"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subject5lay"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="6dp"
+            android:hint="@string/total_marks"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sub5exttotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/subject4lay"
+                android:importantForAutofill="no"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sub5intlay"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sub5extlay"
+            android:layout_marginTop="6dp"
+            android:hint="@string/enter_internal_marks"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sub5int"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:importantForAutofill="no"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sub5inttotallay"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sub5exttotallay"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="6dp"
+            android:hint="@string/total_marks"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sub5inttotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sub3exttotallay"
+                android:importantForAutofill="no"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sub5intlay"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/calculate" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            app:cardElevation="6dp"
+            app:cardCornerRadius="10dp"
+
+            android:layout_below="@id/button"
+
+            android:layout_marginTop="8dp"
+
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/resultheader"
+                    android:layout_width="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="8dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/result"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
+
+                <TextView
+                    android:id="@+id/gradeheader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/resultheader"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/grade"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Overline" />
+
+                <TextView
+                    android:id="@+id/grade"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/gradeheader"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginBottom="24dp"
+                    android:textColor="#00E676"
+                    android:textStyle="bold"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                    tools:text="A+" />
+
+                <TextView
+                    android:id="@+id/gpaheader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/resultheader"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="36dp"
+                    android:text="@string/gpa"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Overline" />
+
+                <TextView
+                    android:id="@+id/gpa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/gpaheader"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="#00B0FF"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="36dp"
+                    android:layout_marginBottom="24dp"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                    tools:text="7.6" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/grade"
+                    android:layout_margin="16dp"
+                    android:text="@string/marks_secured"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+
+                <TextView
+                    android:id="@+id/marks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/textView2"
+                    android:layout_toEndOf="@id/textView2"
+                    android:textColor="#F50057"
+                    android:textStyle="bold"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    tools:text="480" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/grade"
+                    android:layout_margin="16dp"
+                    android:layout_toEndOf="@id/marks"
+
+                    android:text="@string/out_of"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+
+                <TextView
+                    android:id="@+id/total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/textView3"
+                    android:layout_toEndOf="@id/textView3"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    tools:text="500" />
+
+
+                <TextView
+                    android:id="@+id/tvheading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textView3"
+                    android:layout_margin="16dp"
+
+                    android:text="@string/top_scoring_subject"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+
+                <TextView
+                    android:id="@+id/topsub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/tvheading"
+                    android:layout_toEndOf="@id/tvheading"
+                    android:textAllCaps="true"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:textColor="#00E676"
+                    android:textStyle="bold"
+                    tools:text="Subject Name" />
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </RelativeLayout>
 </ScrollView>
